@@ -27,37 +27,68 @@
    
     <main>
         
-       
-        <br><br><br><br><br> <h1>Simulador de Credito Automtriz OxxoSpin</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <h1>Simulador de Credito Automtriz OxxoSpin</h1>
 
         <section class="HorizontalPanel">
-            <p>Tasa de interes fija anual desde 12.55% anual fija*</p>
+            <div class="Izq">
+            <h3>Tasa de interes fija anual desde 12.55% anual fija*</h3>
+            
+            <ol>
             <li>Cotiza con una tasa de interes maxima de 15.66% fija anual</li>
+            <br>
             <li>Llena tu solicitud en línea en 10 minutos</li>
+            <br>
             <li>Si tu solicitud es aprobada, nuestros asesores telefónicos se pondrán en contacto contigo para explicarte tu oferta final y siguientes pasos</li>
-        </section>
+        </ol>
+    </div>
+    <div class="Der">
+<img src="Imagenes/OxxoAuto.jpg">
 
+    </div>
+        </section>
+        
         <div class="button-container">
             <button class="button">Nuevo</button>
             <button class="button">SemiNuevo</button>
         </div>
               
-        <section class="Contenido">
+        <section class="contenido">
 
             <div class="formulario">
                 <h2>Formulario de Crédito</h2>
                 <div class="form-group">
-                    <label for="Modelo">¿Cuál es el modelo del auto que quieres?</label>
-                    <input type="text" id="Modelo" placeholder="Ingrese Ano del Modelo">
+                    <label for="ano">¿Cuál es el modelo del auto que quieres?</label>
+                    <input type="number" id="ano" placeholder="Ingrese Ano del Modelo">
                 </div>
+
+
                 <div class="form-group">
-                    <label for="ingresos">Ingresos Mensuales</label>
-                    <input type="number" id="ingresos" placeholder="Ingrese sus ingresos">
+                    <label for="costo">¿Cuánto cuesta el auto que quieres?</label>
+                    <input type="number" id="costo" placeholder="$100,000.00">
                 </div>
+
                 <div class="form-group">
-                    <label for="deuda">Deuda Actual</label>
-                    <input type="number" id="deuda" placeholder="Ingrese su deuda actual">
+                    <label for="enganche">¿Cuánto quieres dar de enganche?</label>
+                    <input type="number" id="enganche" placeholder="$20,000.00">
                 </div>
+
+                <div class="form-group">
+                    <label for="marca">Marca*</label>
+                    <input type="text" id="marca" placeholder="Honda">
+                </div>
+
+                <div class="form-group">
+                    <label for="modelo">Modelo*</label>
+                    <input type="text" id="modelo" placeholder="CIVIC">
+                </div>
+
+                <div class="form-group">
+                    <label for="version">Version*</label>
+                    <input type="text" id="version" placeholder="SEDAN TOURING CVT">
+                </div>
+
                 <button onclick="calcularCredito()">Calcular Crédito</button>
             </div>
     
@@ -68,8 +99,8 @@
                     <p id="resultadoCredito">Esperando...</p>
                 </div>
             </div>
-        </div>
-          
+            </section>
+          </section>
 
         
 
