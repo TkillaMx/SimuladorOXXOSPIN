@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="Simulador.css">
+</head>
+
+
+     
+    <header>
+<!-- Menú de navegación -->
+<nav class="navbar-top">
+    <div class="logo">OxxoSpin</div>
+    <div class="nav-links">
+        <a href="#inicio">Cesun Universidad</a>
+        <a href="#servicios">Prof.Barraza Gererdo Juan Francisco</a>
+        <a href="#acerca">Matematicas Financieras</a>
+        
+    </div>
+</nav>
+
+</header>
+
+<body>
+   
+    <main>
+        
+       
+        <br><br><br><br><br> <h1>Simulador de Credito Automtriz OxxoSpin</h1>
+
+        <section class="HorizontalPanel">
+            <p>Tasa de interes fija anual desde 12.55% anual fija*</p>
+            <li>Cotiza con una tasa de interes maxima de 15.66% fija anual</li>
+            <li>Llena tu solicitud en línea en 10 minutos</li>
+            <li>Si tu solicitud es aprobada, nuestros asesores telefónicos se pondrán en contacto contigo para explicarte tu oferta final y siguientes pasos</li>
+        </section>
+
+        <div class="button-container">
+            <button class="button">Nuevo</button>
+            <button class="button">SemiNuevo</button>
+        </div>
+              
+        <section class="Contenido">
+
+            <div class="formulario">
+                <h2>Formulario de Crédito</h2>
+                <div class="form-group">
+                    <label for="Modelo">¿Cuál es el modelo del auto que quieres?</label>
+                    <input type="text" id="Modelo" placeholder="Ingrese Ano del Modelo">
+                </div>
+                <div class="form-group">
+                    <label for="ingresos">Ingresos Mensuales</label>
+                    <input type="number" id="ingresos" placeholder="Ingrese sus ingresos">
+                </div>
+                <div class="form-group">
+                    <label for="deuda">Deuda Actual</label>
+                    <input type="number" id="deuda" placeholder="Ingrese su deuda actual">
+                </div>
+                <button onclick="calcularCredito()">Calcular Crédito</button>
+            </div>
+    
+            <!-- Resultado del Crédito -->
+            <div class="resultado">
+                <div class="resultado-content">
+                    <p>Resultado del Crédito:</p>
+                    <p id="resultadoCredito">Esperando...</p>
+                </div>
+            </div>
+        </div>
+          
+
+        
+
+<!-- Pie de página -->
+    <footer class="footer">
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#acerca">Acerca de</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="footer-info">
+            <p>&copy;Simulador de Credito Automotriz  2024 Creado por Crisftofer & Alan  @AetherLand | app v1.00.</p>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,269 @@
+/*NavBar*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos del menú de navegación */
+.navbar-top {
+    background-color: #dd9f1b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position:sticky; /* Hace que el menú esté siempre en la parte superior */
+    width: 100%;
+    top: 0px;
+    z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
+    font-weight: bold;
+}
+
+.navbar-top a {
+    color: rgb(240, 14, 14);
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.navbar-top a:hover {
+    background-color: #fdfdfd;
+}
+
+.logo-top {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Estilos del contenido principal */
+main {
+    margin-top: 60px; /* Asegura que el contenido no quede debajo del menú */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    box-sizing: border-box;
+}
+
+section {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+   
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+
+/*Body*/
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center; /* Centra texto dentro de main */
+    flex-direction: column; /* Alinea elementos en columna */
+    height: 100%;
+    width: 100%;
+    max-width: 800px; /* Opcional: para limitar el ancho */
+  
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+
+.HorizontalPanel{
+    background-color:rgb(228, 173, 22);
+    width:100%;
+}
+ 
+
+
+/*Footer*/
+
+.section {
+   display: flex;
+   justify-content: space-between;
+   list-style-type: none; /* Espacio uniforme entre columnas */
+ }
+ 
+ .column {
+   flex: 1; /* Cada columna ocupa un espacio igual */
+   margin: 0 10px; /* Espaciado entre columnas */
+   padding: 50px; /* Relleno interno de cada columna */
+   /* Color de fondo para visualización */
+ }
+ 
+
+
+
+ .Introduccion{
+   
+  max-width: 1000px; 
+ }
+ 
+
+.button-container  {
+    display: flex; /* Usa flexbox para alinear los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #cee4f3; /* Color de fondo normal */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 12px 24px; /* Espaciado interno */
+    font-family: 'Arial', sans-serif; /* Fuente */
+}
+
+.button:hover {
+    background-color: #e7e7e7; /* Color al pasar el ratón por encima */
+}
+
+.button:focus {
+    outline: none; /* Elimina el contorno del navegador */
+    background-color: #1abc9c; /* Color cuando el botón está enfocado */
+}
+
+.button:active {
+    background-color: #16a085; /* Color cuando el botón está activo (presionado) */
+}
+
+/*Formulario*/
+
+.formulario {
+    flex: 1; /* Ocupa el 50% del ancho */
+    padding: 20px;
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border-right: 2px solid #dee2e6; /* Línea divisoria */
+}
+
+.resultado {
+    flex: 1; /* Ocupa el 50% del ancho */
+    padding: 20px;
+    background-color: #ffffff; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultado-content {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 3px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*pie de pagina*/
+
+.footer {
+    background-color: #333;
+    width: 100%;
+    color: white;
+    padding: 20px ;
+    text-align: center;
+    position: relative;
+
+}
+.footer-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el menú de navegación */
+    flex-wrap: wrap; /* Permite que el menú se ajuste en pantallas pequeñas */
+}
+
+.footer-nav li {
+    margin: 0 15px; /* Espaciado entre los elementos del menú */
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ffcc00; /* Cambia el color al pasar el ratón sobre el enlace */
+}
+
+.footer-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #bbb;
+}
