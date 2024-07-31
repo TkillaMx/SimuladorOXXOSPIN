@@ -3,47 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Horizontal con Formularios</title>
-    <link rel="stylesheet" href="testsheet.css">
+    <title>Simulador de Crédito Hipotecario</title>
 </head>
 <body>
-    <div class="menu">
-        <ul>
-            <li><a href="#" onclick="showForm('form1')">Formulario 1</a></li>
-            <li><a href="#" onclick="showForm('form2')">Formulario 2</a></li>
-            <li><a href="#" onclick="showForm('form3')">Formulario 3</a></li>
-        </ul>
-    </div>
-    
-    <div class="form-container">
-        <div id="form1" class="form" style="display: none;">
-            <h2>Formulario 1</h2>
-            <form>
-                <label for="name1">Nombre:</label>
-                <input type="text" id="name1" name="name1">
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+    <h2>Simulador de Crédito Hipotecario</h2>
+    <form id="mortgageForm">
+        <label for="principalAmount">Monto del crédito:</label>
+        <input type="number" id="principalAmount" required><br><br>
+        
+        <label for="interestRate">Tasa de interés anual (%):</label>
+        <input type="number" step="0.01" id="interestRate" required><br><br>
+        
+        <label for="loanTerm">Plazo del crédito (años):</label>
+        <input type="number" id="loanTerm" required><br><br>
 
-        <div id="form2" class="form" style="display: none;">
-            <h2>Formulario 2</h2>
-            <form>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+        <label for="interestType">Tipo de interés:</label>
+        <select id="interestType">
+            <option value="simple">Simple</option>
+            <option value="compuesto">Compuesto</option>
+        </select><br><br>
 
-        <div id="form3" class="form" style="display: none;">
-            <h2>Formulario 3</h2>
-            <form>
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone">
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </div>
+        <label for="compoundingOption">Opción de capitalización (solo para interés compuesto):</label>
+        <select id="compoundingOption">
+            <option value="2">Semestral</option>
+            <option value="3">Cuatrimestral</option>
+            <option value="4">Trimestral</option>
+        </select><br><br>
 
-    <script src="testsheet.js"></script>
+        <button type="button" onclick="calculateMortgage()">Calcular</button>
+    </form>
+
+    <h3>Resultado</h3>
+    <p id="result"></p>
+
+    <h3>Historial de Balance</h3>
+    <table id="balanceTable" border="1">
+        <thead>
+            <tr>
+                <th>Periodo</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function calculateMortgage() {
+            const principalAmount = parseFloat(document.getElementById('principalAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+            const loanTerm = parseInt(document.getElementById('loanTerm').value);
+            const interestType = document.getElementById('interestType').value;
+            const n = parseInt(document.getElementById('compoundingOption').value);
+
+            let historial = [];
+            let interesGanado = 0;
+            let balanceTotal = 0;
+
+            if (interestType === 'compuesto') {
+                [historial, interesGanado, balanceTotal] = calcularInteresCompuesto(principalAmount, interestRate, loanTerm, n);
+            } else if (interestType === 'simple') {
+                [historial, interesGanado, balanceTotal] = calcularInteresSimple(principalAmount, interestRate, loanTerm);
+            }
+
+            document.getElementById('result').textContent = 
+                `Interés total ganado: $${interesGanado.toFixed(2)}\nMonto total al final del periodo: $${balanceTotal.toFixed(2)}`;
+            
+            const balanceTableBody = document.getElementById('balanceTable').getElementsByTagName('tbody')[0];
+            balanceTableBody.innerHTML = '';
+            historial.forEach(([periodo, balance]) => {
+                const row = balanceTableBody.insertRow();
+                const cellPeriodo = row.insertCell(0);
+                const cellBalance = row.insertCell(1);
+                cellPeriodo.textContent = periodo;
+                cellBalance.textContent = balance.toFixed(2);
+            });
+        }
+
+        function calcularInteresCompuesto(principal, tasa, tiempo, n) {
+            let balance = principal;
+            const historial = [];
+
+            for (let periodo = 1; periodo <= n * tiempo; periodo++) {
+                balance *= (1 + tasa / n);
+                historial.push([periodo, balance]);
+            }
+
+            const interesGanado = balance - principal;
+            return [historial, interesGanado, balance];
+        }
+
+        function calcularInteresSimple(principal, tasa, tiempo) {
+            const interesGanado = principal * tasa * tiempo;
+            const balanceTotal = principal + interesGanado;
+            const historial = [];
+
+            for (let año = 1; año <= tiempo; año++) {
+                historial.push([año, principal + principal * tasa * año]);
+            }
+
+            return [historial, interesGanado, balanceTotal];
+        }
+    </script>
 </body>
 </html>
