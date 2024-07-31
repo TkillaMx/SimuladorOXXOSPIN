@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    background-color: #ffd23ebe;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: #e4d0d0c9;
+}
+
+.form-container {
+    margin: 20px;
+}
+
+.form {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(221, 205, 205, 0.808);
+}
+
+.form h2 {
+    margin-top: 0;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #cee4f3; /* Color de fondo normal */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 12px 24px; /* Espaciado interno */
+    font-family: 'Arial', sans-serif; /* Fuente */
+}
+
+.form button:hover {
+    background-color: #e91313;
+}
+
+
+
+
+
+
+
+.form button:focus {
+    outline: none; /* Elimina el contorno del navegador */
+    background-color: #1abc9c; /* Color cuando el botón está enfocado */
+}
+
+.form button:active {
+    background-color: #16a085; /* Color cuando el botón está activo (presionado) */
+}

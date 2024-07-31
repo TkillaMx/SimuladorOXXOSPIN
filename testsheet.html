@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Horizontal con Formularios</title>
+    <link rel="stylesheet" href="testsheet.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#" onclick="showForm('form1')">Formulario 1</a></li>
+            <li><a href="#" onclick="showForm('form2')">Formulario 2</a></li>
+            <li><a href="#" onclick="showForm('form3')">Formulario 3</a></li>
+        </ul>
+    </div>
+    
+    <div class="form-container">
+        <div id="form1" class="form" style="display: none;">
+            <h2>Formulario 1</h2>
+            <form>
+                <label for="name1">Nombre:</label>
+                <input type="text" id="name1" name="name1">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="form2" class="form" style="display: none;">
+            <h2>Formulario 2</h2>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="form3" class="form" style="display: none;">
+            <h2>Formulario 3</h2>
+            <form>
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone">
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="testsheet.js"></script>
+</body>
+</html>
