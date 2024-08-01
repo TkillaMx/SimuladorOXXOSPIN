@@ -168,7 +168,7 @@ p {
     gap: 10px; /* Espacio entre los botones */
 }
 
-.button {
+.custom-button {
     padding: 10px 20px;
     background-color: #cee4f3; /* Color de fondo normal */
     border: none;
@@ -194,6 +194,14 @@ p {
 .button:active {
     background-color: #16a085; /* Color cuando el botón está activo (presionado) */
 }
+
+
+
+.button-icon {
+    margin-top: 5px; /* Espacio entre el texto y el icono */
+    font-size: 20px; /* Tamaño del icono */
+  }
+
 
 /*Formulario*/
 
@@ -286,8 +294,8 @@ input[type="number"] {
 }
 
 img {
-    max-height: 90%;
-    max-width: 90%;
+    max-height: 70%;
+    max-width: 70%;
     border-radius: 10px;
     
 }
