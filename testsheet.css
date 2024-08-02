@@ -83,13 +83,6 @@ body {
 .form button:hover {
     background-color: #e91313;
 }
-
-
-
-
-
-
-
 .form button:focus {
     outline: none; /* Elimina el contorno del navegador */
     background-color: #1abc9c; /* Color cuando el botón está enfocado */

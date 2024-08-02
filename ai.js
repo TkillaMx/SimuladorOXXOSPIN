@@ -18,7 +18,7 @@ function calculateMortgage() {
     const n = parseInt(document.getElementById('compoundingOption').value);
 
     if (principalAmount <= 0 || interestRate <= 0 || loanTerm <= 0 || isNaN(principalAmount) || isNaN(interestRate) || isNaN(loanTerm)) {
-        alert("Por favor, ingrese valores válidos para todos los campos.");
+        alert("Por favor, ingrese valores válidos y positivos para todos los campos.");
         return;
     }
 
@@ -119,7 +119,7 @@ function calcularInteresSimple(principal, tasa, tiempo) {
 }
 
 function resetForm() {
-    document.getElementById('mortgageForm').reset();
+    document.getElementById('savingsForm').reset();
     document.getElementById('result').textContent = '';
     document.getElementById('balanceTable').getElementsByTagName('tbody')[0].innerHTML = '';
     document.getElementById('amortizationTable').getElementsByTagName('tbody')[0].innerHTML = '';
@@ -135,31 +135,10 @@ function calculateSavings() {
     let interestType = document.getElementById('interestType').value;
     let compoundingOption = parseInt(document.getElementById('compoundingOption').value);
 
-    let A;
-    let tableContent = '';
-
-    if (interestType === 'simple') {
-        A = P * (1 + r * t);
-    } else {
-        A = P * Math.pow(1 + r / compoundingOption, compoundingOption * t);
-        for (let i = 1; i <= n * t; i++) {
-            let balance = A + additionalDeposits * i;
-            tableContent += `<tr><td>${i}</td><td>${balance.toFixed(2)}</td></tr>`;
-        }
+    if (P <= 0 || r < 0 || n <= 0 || t <= 0 || additionalDeposits < 0 || isNaN(P) || isNaN(r) || isNaN(n) || isNaN(t) || isNaN(additionalDeposits)) {
+        alert("Por favor, ingrese valores válidos y positivos para todos los campos.");
+        return;
     }
-
-    document.getElementById('result').innerText = `Monto Final: ${A.toFixed(2)}`;
-    document.querySelector('#balanceTable tbody').innerHTML = tableContent;
-}
-
-function calculateSavings() {
-    let P = parseFloat(document.getElementById('initialAmount').value);
-    let r = parseFloat(document.getElementById('interestRate').value) / 100;
-    let n = parseInt(document.getElementById('frequency').value);
-    let t = parseInt(document.getElementById('period').value);
-    let additionalDeposits = parseFloat(document.getElementById('additionalDeposits').value);
-    let interestType = document.getElementById('interestType').value;
-    let compoundingOption = parseInt(document.getElementById('compoundingOption').value);
 
     let A;
     let amortizationContent = '';
@@ -202,3 +181,8 @@ function calculateSavings() {
     document.getElementById('result').innerText = `Monto Final: ${A.toFixed(2)}`;
     document.querySelector('#amortizationTable tbody').innerHTML = amortizationContent;
 }
+
+// Agregar funcionalidad al botón de reinicio
+document.getElementById('reset-button').addEventListener('click', function() {
+    resetForm();
+});

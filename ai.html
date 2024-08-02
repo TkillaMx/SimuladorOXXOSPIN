@@ -3,122 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
+    <title>Simulador de Ahorro e Inversión OxxoSpin</title>
     <link rel="stylesheet" href="Simulador.css">
     <link rel="stylesheet" href="testsheet.css">
 </head>
-
-
-    <header>
-<!-- Menú de navegación -->
-<nav class="navbar-top">
-    <div class="logo">OxxoSpin</div>
-    <div class="nav-links">
-        <a href="ai.html">Simulador de Ahorro e Inversion</a>
-        <a href="Simulador.html">Simulador de Credito Hipotecario</a>
-        <a href="#inicio">Cesun Universidad</a>
-        <a href="#servicios">Prof.Barraza Gererdo Juan Francisco</a>
-        <a href="#acerca">Matematicas Financieras</a>
-        
-    </div>
-</nav>
-
-</header>
-
 <body>
-   
-    <main>
-     
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <header>
+        <!-- Menú de navegación -->
+        <nav class="navbar-top">
+            <div class="logo">OxxoSpin</div>
+            <div class="nav-links">
+                <a href="ai.html">Simulador de Ahorro e Inversión</a>
+                <a href="Simulador.html">Simulador de Crédito Hipotecario</a>
+                <a href="#inicio">Cesun Universidad</a>
+                <a href="#servicios">Prof. Barraza Gererdo Juan Francisco</a>
+                <a href="#acerca">Matemáticas Financieras</a>
+            </div>
+        </nav>
+    </header>
 
-        <h1>Simulador de Ahorro e Inversion OxxoSpin</h1>
+    <main>
+        <h1>Simulador de Ahorro e Inversión OxxoSpin</h1>
 
         <section class="HorizontalPanel">
             <div class="Izq">
-            <h3>Tasa desde Interes de 10.20% anual</h3>
-            <br>
-            <p>Ganancia Anual Total de 10.69%</p>
-            <br>
-            <a href="Nada.html">Consultar terminos y condiciones</a>
-    </div>
-    
-    <div class="Der">
-<img src="Imagenes/LogoCasa.png">
-
-    </div>
+                <h3>Tasa desde Interés de 10.20% anual</h3>
+                <br>
+                <p>Ganancia Anual Total de 10.69%</p>
+                <br>
+                <a href="Nada.html">Consultar términos y condiciones</a>
+            </div>
+            <div class="Der">
+                <img src="Imagenes/LogoCasa.png" alt="Logo Casa">
+            </div>
         </section>
 
         <div class="menu">
             <ul>
                 <li><a href="#" onclick="showForm('form1')">Ahorro</a></li>
-            
             </ul>
         </div>
-        
 
-    <h2>Ganancia anual total y las tasas de interes</h2>
-    <form id="mortgageForm">
-        <label for="principalAmount">Con cuánto vas a iniciar tu ahorro $*:</label>
-        <input type="number" id="principalAmount" required><br><br>
-        
-        <label for="interestRate">Fecha de inicio</label>
-        <input type="number" step="0.01" id="interestRate" required><br><br>
-        
-        <label for="loanTerm">Puedo hacer depósitos adicionales por*:</label>
-        <input type="number" id="loanTerm" required><br><br>
-        
-        <label for="loanTerm">Quiero saber cuanto obtendré en*:</label>
-        <input type="number" id="loanTerm" required><br><br>
+        <h2>Ganancia anual total y las tasas de interés</h2>
+        <form id="savingsForm">
+            <label for="initialAmount">Monto Inicial $*:</label>
+            <input type="number" id="initialAmount" min="0" required><br><br>
 
-        <label for="loanTerm">Periodicidad*:</label>
-        <input type="number" id="loanTerm" required><br><br>
+            <label for="interestRate">Tasa de Interés Anual (%):</label>
+            <input type="number" id="interestRate" min="0" step="0.01" required><br><br>
 
-        <label for="interestType">Tipo de interés:</label>
-        <select id="interestType">
-            <option value="simple">Simple</option>
-            <option value="compuesto">Compuesto</option>
-        </select><br><br>
+            <label for="additionalDeposits">Depósitos Adicionales por:</label>
+            <input type="number" id="additionalDeposits" min="0" required><br><br>
 
-        <label for="compoundingOption">Opción de capitalización (solo para interés compuesto):</label>
-        <select id="compoundingOption">
-            <option value="2">Semestral</option>
-            <option value="3">Cuatrimestral</option>
-            <option value="4">Trimestral</option>
-        </select><br><br>
+            <label for="period">Periodo de Tiempo (años):</label>
+            <input type="number" id="period" min="0" required><br><br>
 
-        <button type="button" onclick="calculateMortgage()">Calcular</button>
-    </form>
+            <label for="frequency">Periodicidad (número de aportes por año):</label>
+            <input type="number" id="frequency" min="0" required><br><br>
 
-    <h3>Resultado</h3>
-    <p id="result"></p>
+            <label for="interestType">Tipo de Interés:</label>
+            <select id="interestType">
+                <option value="simple">Simple</option>
+                <option value="compuesto">Compuesto</option>
+            </select><br><br>
 
-            </div>
+            <label for="compoundingOption">Opción de Capitalización (solo para interés compuesto):</label>
+            <select id="compoundingOption">
+                <option value="2">Semestral</option>
+                <option value="4">Trimestral</option>
+                <option value="12">Mensual</option>
+            </select><br><br>
 
-            <section class="HorizontalPanel">
+            <button type="button" onclick="calculateSavings()">Calcular</button>
+            <button type="button" onclick="resetForm()">Reiniciar</button>
+        </form>
+
+        <h3>Resultado</h3>
+        <p id="result"></p>
+
+        <h3>Tabla de Amortización</h3>
+        <table id="amortizationTable" border="1">
+            <thead>
+                <tr>
+                    <th>Periodo</th>
+                    <th>Monto Inicial</th>
+                    <th>Interés Ganado</th>
+                    <th>Depósitos Adicionales</th>
+                    <th>Balance Final</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <section class="HorizontalPanel">
             <!-- Resultado del Crédito -->
             <div class="resultado">
                 <div class="resultado-content">
                     <h3>Resultado</h3>
-    <p id="result"></p>
+                    <p id="result"></p>
 
-    <h3>Historial de Balance</h3>
-    <table id="balanceTable" border="1">
-        <thead>
-            <tr>
-                <th>Periodo</th>
-                <th>Balance</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+                    <h3>Historial de Balance</h3>
+                    <table id="balanceTable" border="1">
+                        <thead>
+                            <tr>
+                                <th>Periodo</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            </section>
-          
         </section>
+    </main>
 
-<!-- Pie de página -->
+    <!-- Pie de página -->
     <footer class="footer">
         <nav class="footer-nav">
             <ul>
@@ -129,9 +130,9 @@
             </ul>
         </nav>
         <div class="footer-info">
-            <p>&copy;Simulador de Credito Automotriz  2024 Creado por Crisftofer & Alan  @AetherLand | app v1.00.</p>
+            <p>&copy;Simulador de Crédito Automotriz 2024 Creado por Crisftofer & Alan @AetherLand | app v1.00.</p>
         </div>
     </footer>
-    <script src="testsheet.js"></script>
-
+    <script src="ai.js"></script>
+</body>
 </html>
