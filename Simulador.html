@@ -32,7 +32,7 @@
                 <a href="Nada.html">Consultar términos y condiciones</a>
             </div>
             <div class="Der">
-                <img src="Imagenes/ahorro.png" alt="Imagen de ahorro">
+                <img src="Imagenes/LogoCasa.png" alt="Imagen de ahorro">
             </div>
         </section>
 
@@ -44,15 +44,17 @@
         
         <h2>¿Cómo quieres calcular?</h2>
         <h2>Simulador de Crédito Hipotecario</h2>
+
+        <section class="ga">
         <form id="mortgageForm">
             <label for="principalAmount">Monto del crédito:</label>
-            <input type="number" id="principalAmount" min="0" required><br><br>
+            <input type="number" id="principalAmount" min="0" placeholder="Ej. 15,000$"><br><br>
             
             <label for="interestRate">Tasa de interés anual (%):</label>
             <input type="number" step="0.01" id="interestRate" min="0" required><br><br>
             
             <label for="loanTerm">Plazo del crédito (años):</label>
-            <input type="number" id="loanTerm" min="0" required><br><br>
+            <input type="number" id="loanTerm" min="0" placeholder="Ej. 3 años" required><br><br>
 
             <label for="interestType">Tipo de interés:</label>
             <select id="interestType">
@@ -66,15 +68,17 @@
                 <option value="3">Cuatrimestral</option>
                 <option value="4">Trimestral</option>
             </select><br><br>
+        </section>
 
             <button type="button" onclick="calculateMortgage()">Calcular</button>
+            <br>
             <button type="button" onclick="resetForm()">Reiniciar</button>
         </form>
 
         <h3>Resultado</h3>
         <p id="result"></p>
 
-        <section class="HorizontalPanel">
+        <section class="HorizontalPanel2">
             <!-- Resultado del Crédito -->
             <div class="resultado">
                 <div class="resultado-content">

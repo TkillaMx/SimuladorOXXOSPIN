@@ -14,8 +14,8 @@ body {
 }
 
 img {
-    max-height: 70%;
-    max-width: 70%;
+    max-height: 50%;
+    max-width: 50%;
     border-radius: 10px;
 }
 
@@ -64,7 +64,15 @@ main {
     background-color: rgba(245, 180, 3, 0.5);
     width: 100%;
     display: flex;
-    padding: 10px;
+    padding: 2px;
+    max-height: 60%;
+}
+
+.HorizontalPanel2 {
+    background-color: rgba(245, 180, 3, 0.5);
+    width: 100%;
+    padding: 2px;
+    align-items: center;
 }
 
 .Izq {
@@ -132,4 +140,32 @@ main {
         padding: 10px;
         margin: 5px 0;
     }
+}
+
+table {
+    background-color: rgba(250, 249, 247, 0.932);
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+.resultado{
+    background-color: rgba(250, 249, 247, 0.932);
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+.resultadocontent{
+    background-color: rgba(250, 249, 247, 0.932);
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+
+.ga{
+    
+   text-align:justify;
+    
 }
