@@ -49,8 +49,11 @@
             <label for="initialAmount">Con cuanto vas a iniciar tu ahorro $*:</label>
             <input type="number" id="initialAmount" min="0" placeholder="Ej. 25,000$" required><br><br>
 
-            <label for="interestRate">Tasa de Interés Anual (10.20%):</label>
-            <input type="number" id="interestRate" min="0" step="0.01"  required><br><br>
+            <label for="interestRate">Tasa de Interés Anual:</label>
+            <select id="interestRate">
+                <option value="10.20">10.20%</option>
+                <!-- Puedes agregar más opciones si lo deseas -->
+            </select><br><br>
 
             <label for="additionalDeposits">Depósitos Adicionales por:</label>
             <input type="number" id="additionalDeposits" min="0" placeholder="Ej. 3,000$" required><br><br>
@@ -59,7 +62,7 @@
             <input type="number" id="period" min="0" placeholder="Ej. 7 años" required><br><br>
 
             <label for="frequency">Periodicidad (número de aportes por año):</label>
-            <input type="number" id="frequency" min="0" placeholder="Ej. 5 " required><br><br>
+            <input type="number" id="frequency" min="0" placeholder="Ej. 1/2/4/6 " required><br><br>
 
             <label for="interestType">Tipo de Interés:</label>
             <select id="interestType">

@@ -128,7 +128,7 @@ function resetForm() {
 
 function calculateSavings() {
     let P = parseFloat(document.getElementById('initialAmount').value);
-    let r = parseFloat(document.getElementById('interestRate').value) / 100;
+    let r = parseFloat(document.getElementById('interestRate').value) / 100;  // Cambio aquí
     let n = parseInt(document.getElementById('frequency').value);
     let t = parseInt(document.getElementById('period').value);
     let additionalDeposits = parseFloat(document.getElementById('additionalDeposits').value);

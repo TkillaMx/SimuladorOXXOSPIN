@@ -70,6 +70,7 @@ function calculateMortgage() {
     }
 }
 
+
 function calcularInteresCompuesto(principal, tasa, tiempo, n) {
     let balance = principal;
     const historial = [];
